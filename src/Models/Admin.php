@@ -41,28 +41,27 @@ class Admin extends Model {
 		return in_array($role, $rolesArray);
 	}
 	public function addressbooks() {
-		return $this->hasMany('Base\OldModels\AddressBook');
+		return $this->hasMany('Base\Models\AddressBook');
 	}
 	public function area() {
-		return $this->hasOne('Base\OldModels\Area');
+		return $this->hasOne('Base\Models\Area');
 	}
 
 	public function sendPasswordResetNotification($token) {
 		$this->notify(new \App\Notifications\MyResetPassword($token));
 	}
 	public function driverAllLocations() {
-		return $this->hasMany('Base\OldModels\Location')->orderBy('id', 'DESC');
+		return $this->hasMany('Base\Models\Location')->orderBy('id', 'DESC');
 	}
 
 	public function driverLocations() {
-		return $this->hasMany('Base\OldModels\Location')->whereNotNull('formatted_address')->orderBy('id', 'DESC');
+		return $this->hasMany('Base\Models\Location')->whereNotNull('formatted_address')->orderBy('id', 'DESC');
 	}
 
 	public function driverlastLocations() {
 		return $this->driverLocations()->first();
 	}
-	public function messages()
-	{
+	public function messages() {
 		return $this->hasMany('Base\Models\AdminMessage');
 	}
 }
