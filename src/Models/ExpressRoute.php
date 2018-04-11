@@ -11,10 +11,10 @@ class ExpressRoute extends Model {
 	protected $dates = ['start_at', 'end_at'];
 
 	public function toDriver() {
-		return $this->hasOne('Base\Models\Driver', 'id', 'to_driver_id')->select('id', 'name', 'mobile', 'is_active', 'is_online', 'last_lng', 'last_lat', 'last_position', 'last_refresh_at');
+		return $this->hasOne('Base\Models\Driver', 'id', 'to_driver_id')->select('id', 'name', 'mobile', 'is_active', 'is_online', 'push_id', 'last_lng', 'last_lat', 'last_position', 'last_refresh_at');
 	}
 	public function fromDriver() {
-		return $this->hasOne('Base\Models\Driver', 'id', 'from_driver_id')->select('id', 'name', 'mobile', 'is_active', 'is_online', 'last_lng', 'last_lat', 'last_position', 'last_refresh_at');
+		return $this->hasOne('Base\Models\Driver', 'id', 'from_driver_id')->select('id', 'name', 'mobile', 'is_active', 'is_online', 'push_id', 'last_lng', 'last_lat', 'last_position', 'last_refresh_at');
 	}
 
 	public function fromStation() {
