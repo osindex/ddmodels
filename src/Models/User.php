@@ -76,6 +76,9 @@ class User extends Model {
 	public function messages() {
 		return $this->hasMany('Base\Models\UserMessage');
 	}
+	public function stat() {
+		return $this->hasMany('Base\Models\StatUser');
+	}
 	public function expsCount() {
 		return $this->hasOne('Base\Models\Express')
 			->selectRaw('user_id, count(user_id) as aggregate')
