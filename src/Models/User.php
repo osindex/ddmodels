@@ -73,8 +73,13 @@ class User extends Model {
 	public function addressbook() {
 		return $this->hasOne('Base\Models\AddressBook')->where('is_default', 1);
 	}
-	public function messages()
-	{
+	public function messages() {
 		return $this->hasMany('Base\Models\UserMessage');
+	}
+	public function expsCount() {
+		return $this->hasOne('Base\Models\Express')
+			->selectRaw('user_id, count(user_id) as aggregate')
+			->groupBy('user_id');
+
 	}
 }
