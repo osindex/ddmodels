@@ -1,9 +1,9 @@
 <?php
 namespace Base\Models;
 
-class AccountRewardHistory extends Model {
+class AccountRewardTransaction extends Model {
 	// use Notifiable;
-	protected $table = "account_reward_histories";
+	protected $table = "account_reward_transactions";
 	protected $guarded = [];
 
 	public function account() {
