@@ -40,6 +40,9 @@ class Express extends Model {
 	public function user() {
 		return $this->BelongsTo('Base\Models\User');
 	}
+	public function expressLatest() {
+		return $this->hasOne('Base\Models\ExpressRoute')->latest();
+	}
 	public function expressOneRoute() {
 		return $this->hasOne('Base\Models\ExpressRoute');
 	}

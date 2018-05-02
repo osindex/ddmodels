@@ -45,7 +45,9 @@ class User extends Model {
 	public function expresses() {
 		return $this->hasMany('Base\Models\Express');
 	}
-
+	public function account() {
+		return $this->BelongsTo('Base\Models\Account');
+	}
 	public function shop() {
 		return $this->BelongsTo('Base\Models\Account', 'account_id', 'id');
 	}
