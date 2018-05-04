@@ -11,6 +11,9 @@ class Driver extends Model {
 	public function messages() {
 		return $this->hasMany('Base\Models\DriverMessage');
 	}
+	public function routes() {
+		return $this->hasMany('Base\Models\ExpressRoute', 'to_driver_id');
+	}
 // CREATE TABLE `express_payments` (
 	//   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	//   `user_id` int(10) unsigned NOT NULL COMMENT '用户ID',
