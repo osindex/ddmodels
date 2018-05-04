@@ -8,6 +8,9 @@ class Driver extends Model {
 	public function lastAddress() {
 		return $this->hasOne('Base\Models\DriverLocation', 'driver_id', 'id')->orderBy('id', 'DESC');
 	}
+	public function address() {
+		return $this->hasMany('Base\Models\DriverLocation')->orderBy('id', 'DESC');
+	}
 	public function messages() {
 		return $this->hasMany('Base\Models\DriverMessage');
 	}
