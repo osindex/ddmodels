@@ -73,6 +73,9 @@ class Express extends Model {
 	public function expressNopayTransaction() {
 		return $this->hasOne('Base\Models\ExpressTransaction')->where('state', 0)->where('type', 'pay');
 	}
+	public function expressAction() {
+		return $this->hasOne('Base\Models\ExpressAction');
+	}
 	public function expressCancle() {
 		return $this->hasOne('Base\Models\ExpressAction')->where('type', 'cancle')->orderBy('id', 'DESC');
 	}
