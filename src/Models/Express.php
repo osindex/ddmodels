@@ -61,11 +61,14 @@ class Express extends Model {
 	public function expressRoutesWithDriver() {
 		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver');
 	}
+	public function expressRoutesWithAll() {
+		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver', 'fromStation', 'toStation');
+	}
 	public function fromArea() {
-		return $this->belongsTo('Base\Models\Area', 'est_send_area');
+		return $this->belongsTo('Base\Models\Area', 'est_send_area', 'code');
 	}
 	public function toArea() {
-		return $this->belongsTo('Base\Models\Area', 'est_rec_area');
+		return $this->belongsTo('Base\Models\Area', 'est_rec_area', 'code');
 	}
 	public function expressTransactions() {
 		return $this->hasMany('Base\Models\ExpressTransaction');
