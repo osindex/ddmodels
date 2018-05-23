@@ -8,7 +8,7 @@ class Area extends Model {
 	protected $guarded = [];
 
 	public function city() {
-		return $this->belongsTo('Base\Models\City');
+		return $this->belongsTo('Base\Models\City', 'city_code', 'code');
 	}
 	public function stations() {
 		return $this->hasMany('Base\Models\Station', 'area_code', 'code');
@@ -19,5 +19,8 @@ class Area extends Model {
 
 	public function shops() {
 		return $this->hasMany('Base\Models\Account');
+	}
+	public function layer() {
+		return $this->belongsTo('Base\Models\Layer');
 	}
 }
