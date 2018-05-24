@@ -15,7 +15,7 @@ class Invoice extends Model {
 	public function account() {
 		return $this->belongsTo('Base\Models\Account');
 	}
-	public function payment() {
+	public function account_payments() {
 		return $this->hasMany('Base\Models\AccountPayment');
 	}
 }
