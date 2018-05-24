@@ -85,4 +85,10 @@ class Express extends Model {
 	public function product() {
 		return $this->BelongsTo('Base\Models\Product', 'product_id')->select("id", "name", "city_code");
 	}
+	public function add_delivery() {
+		return $this->hasOne('Base\Models\ExpressAddDelivery');
+	}
+	public function add_pickup() {
+		return $this->hasOne('Base\Models\ExpressAddPickup');
+	}
 }

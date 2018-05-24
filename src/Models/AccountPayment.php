@@ -10,6 +10,9 @@ class AccountPayment extends Model {
 	public function user() {
 		return $this->BelongsTo('Base\Models\User');
 	}
+	public function invoice() {
+		return $this->belongsTo('Base\Models\Invoice');
+	}
 // CREATE TABLE `account_payments` (
 	//   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
 	//   `user_id` int(10) unsigned DEFAULT NULL COMMENT '用户ID',
