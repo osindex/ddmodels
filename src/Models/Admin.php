@@ -46,6 +46,9 @@ class Admin extends Model {
 	public function area() {
 		return $this->hasOne('Base\Models\Area');
 	}
+	public function areas() {
+		return $this->hasMany('Base\Models\Area');
+	}
 
 	public function sendPasswordResetNotification($token) {
 		$this->notify(new \App\Notifications\MyResetPassword($token));
