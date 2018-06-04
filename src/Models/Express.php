@@ -61,6 +61,9 @@ class Express extends Model {
 	public function expressRoutesWithDriver() {
 		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver');
 	}
+	public function expressRoutesWithArea() {
+		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver', 'fromArea', 'toArea');
+	}
 	public function expressRoutesWithAll() {
 		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver', 'fromStation', 'toStation');
 	}
