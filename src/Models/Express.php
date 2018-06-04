@@ -50,7 +50,7 @@ class Express extends Model {
 		return $this->hasMany('Base\Models\ExpressRoute');
 	}
 	public function expressWithRoutes() {
-		return $this->expressRoutes()->select('express_id', 'id', 'name', 'op_type', 'start_at', 'end_at', 'created_at');
+		return $this->expressRoutes()->select('express_id', 'id', 'name', 'state', 'driver_state', 'op_type', 'start_at', 'end_at', 'created_at');
 	}
 	public function expressWithPayments() {
 		return $this->expressTransactions()->select('express_id', 'type', 'channel', 'amount', 'state', 'remark', 'created_at');
