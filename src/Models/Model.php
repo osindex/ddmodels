@@ -7,8 +7,8 @@ class Model extends EloquentModel {
 		// 无法实例化 整个传过来
 		$reqs = $req->getRequestParam();
 		// $select = $req->getRequestParam('select') ?? '*';
-		$pageSize = (int) $reqs['per_page'] ?? 10;
-		$page = (int) $reqs['page'] ?? 1;
+		$pageSize = (int) ($reqs['per_page'] ?? 10);
+		$page = (int) ($reqs['page'] ?? 1);
 		$paginator = $query->paginate($pageSize, ['*'], 'page', $page);
 		$paginator->setPath($req->getServerParams()['request_uri']);
 		return $paginator;
