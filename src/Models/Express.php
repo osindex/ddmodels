@@ -21,7 +21,9 @@ class Express extends Model {
 		'created_at',
 		'updated_at',
 	];
-
+	protected $casts = [
+		'e_receipt' => 'array',
+	];
 	/**
 	 * The attributes that should be hidden for arrays.
 	 *
