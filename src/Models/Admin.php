@@ -67,4 +67,7 @@ class Admin extends Model {
 	public function messages() {
 		return $this->hasMany('Base\Models\AdminMessage');
 	}
+	public function menu() {
+		return $this->hasMany('Base\Models\AdminMenu');
+	}
 }

@@ -10,4 +10,7 @@ class AdminRole extends Model {
 	public function admins() {
 		return $this->belongsToMany('App\Models\Admin', 'admin_role_user');
 	}
+	public function menu() {
+		return $this->belongsToMany('Base\Models\AdminMenus', 'admin_role_menu', 'admin_role_id', 'admin_menu_id');
+	}
 }
