@@ -68,6 +68,6 @@ class Admin extends Model {
 		return $this->hasMany('Base\Models\AdminMessage');
 	}
 	public function menu() {
-		return $this->hasMany('Base\Models\AdminMenu');
+		return $this->belongsToMany('Base\Models\AdminMenus', 'admin_menu', 'admin_id', 'admin_menu_id');
 	}
 }
