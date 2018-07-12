@@ -12,4 +12,14 @@ class AccountRewardTransaction extends Model {
 	public function express() {
 		return $this->BelongsTo('Base\Models\Express');
 	}
+	public static function get_unique_no($prefix = '', $length = 16, $channel = '') {
+		$shortened = str_limit($prefix . date('Ymd') . (md5(microtime() . $channel . mt_rand(1, 10000))), $length, '');
+		$record = self::where('transaction_no', '=', $shortened)->first();
+		if (!empty($record)) {
+			// echo $shortened;
+			return static::get_unique_no();
+		} else {
+			return $shortened;
+		}
+	}
 }
