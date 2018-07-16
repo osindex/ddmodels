@@ -96,4 +96,8 @@ class Express extends Model {
 	public function add_pickup() {
 		return $this->hasOne('Base\Models\ExpressAddPickup');
 	}
+	public function insures() {
+		return $this->hasMany('Base\Models\ExpressInsurance');
+	}
+
 }
