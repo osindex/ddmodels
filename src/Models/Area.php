@@ -23,4 +23,7 @@ class Area extends Model {
 	public function layer() {
 		return $this->belongsTo('Base\Models\Layer');
 	}
+	public function admins() {
+		return $this->belongsToMany('Base\Models\Admin');
+	}
 }
