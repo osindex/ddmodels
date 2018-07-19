@@ -7,6 +7,6 @@ class ExpressAddPickup extends Model {
 	protected $table = 'express_add_pickups';
 
 	public function express() {
-		return $this->belongsTo('\App\Models\Express');
+		return $this->belongsTo('\Base\Models\Express');
 	}
 }

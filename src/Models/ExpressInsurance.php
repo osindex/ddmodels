@@ -7,6 +7,6 @@ class ExpressInsurance extends Model {
 	protected $table = 'express_insurances';
 
 	public function express() {
-		return $this->belongsTo('\App\Models\Express');
+		return $this->belongsTo('\Base\Models\Express');
 	}
 }

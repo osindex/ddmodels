@@ -7,9 +7,9 @@ class AdminExpressAlarm extends Model {
 	protected $table = 'admin_express_alarm';
 
 	public function admin() {
-		return $this->belongsTo('\App\Models\Admin');
+		return $this->belongsTo('\Base\Models\Admin');
 	}
 	public function alarm_rule() {
-		return $this->belongsTo('\App\Models\ExpressAlarmRules', 'express_alarm_rule_id');
+		return $this->belongsTo('\Base\Models\ExpressAlarmRules', 'express_alarm_rule_id');
 	}
 }

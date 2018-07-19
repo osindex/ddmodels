@@ -7,6 +7,6 @@ class StatExpressAlarmHistories extends Model {
 	protected $table = 'stat_express_alarm_histories';
 
 	public function alarm_rule() {
-		return $this->belongsTo('\App\Models\ExpressAlarmRules', 'express_alarm_rule_id');
+		return $this->belongsTo('\Base\Models\ExpressAlarmRules', 'express_alarm_rule_id');
 	}
 }

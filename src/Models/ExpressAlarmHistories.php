@@ -7,9 +7,9 @@ class ExpressAlarmHistories extends Model {
 	protected $table = 'express_alarm_histories';
 
 	public function express() {
-		return $this->belongsTo('\App\Models\Express');
+		return $this->belongsTo('\Base\Models\Express');
 	}
 	public function alarm_rule() {
-		return $this->belongsTo('\App\Models\ExpressAlarmRules', 'express_alarm_rule_id');
+		return $this->belongsTo('\Base\Models\ExpressAlarmRules', 'express_alarm_rule_id');
 	}
 }

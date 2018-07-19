@@ -7,6 +7,6 @@ class ExpressAddDelivery extends Model {
 	protected $table = 'express_add_deliveries';
 
 	public function express() {
-		return $this->belongsTo('\App\Models\Express');
+		return $this->belongsTo('\Base\Models\Express');
 	}
 }
