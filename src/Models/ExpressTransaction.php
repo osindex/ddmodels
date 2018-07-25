@@ -1,12 +1,15 @@
 <?php
 namespace Base\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class ExpressTransaction extends Model {
+	use SoftDeletes;
 	protected $table = "express_transactions";
 	protected $guarded = [];
 
 	public function express() {
-		return $this->hasOne('Base\Models\Express', 'id', 'express_id')->with(['shop','user']);
+		return $this->hasOne('Base\Models\Express', 'id', 'express_id')->with(['shop', 'user']);
 	}
 	public static function get_unique_no($prefix = '', $length = 20, $channel = '') {
 		$shortened = str_limit($prefix . date('ymdHis') . (md5(microtime() . $channel . mt_rand(1, 10000))), $length, '');

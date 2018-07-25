@@ -1,7 +1,9 @@
 <?php
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ExpressAction extends Model {
+	use SoftDeletes;
 	protected $table = "express_actions";
 	protected $guarded = [];
 

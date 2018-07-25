@@ -1,8 +1,10 @@
 <?php
 
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Express extends Model {
+	use SoftDeletes;
 	// use SoftDeletes;
 
 	/*

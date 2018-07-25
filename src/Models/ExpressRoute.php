@@ -1,9 +1,10 @@
 <?php
 
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ExpressRoute extends Model {
-
+	use SoftDeletes;
 	protected $table = "express_routes";
 
 	protected $guarded = [];
