@@ -87,4 +87,7 @@ class User extends Model {
 			->groupBy('user_id');
 
 	}
+	public function invites() {
+		return $this->hasMany('Base\Models\InviteHistory');
+	}
 }

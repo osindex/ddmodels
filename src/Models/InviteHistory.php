@@ -11,4 +11,7 @@ class InviteHistory extends Model {
 	public function invited_user() {
 		return $this->belongsTo('Base\Models\User', 'invited_user_id');
 	}
+	public function stat() {
+		return $this->hasMany('Base\Models\StatUser', 'user_id', 'invited_user_id');
+	}
 }
