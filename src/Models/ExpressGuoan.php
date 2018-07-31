@@ -6,6 +6,6 @@ class ExpressGuoan extends Model {
 	protected $guarded = [];
 
 	public function express() {
-		return $this->belongsTo('App\Models\Express');
+		return $this->belongsTo('Base\Models\Express');
 	}
 }
