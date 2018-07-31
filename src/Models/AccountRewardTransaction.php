@@ -1,7 +1,9 @@
 <?php
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AccountRewardTransaction extends Model {
+	use SoftDeletes;
 	// use Notifiable;
 	protected $table = "account_reward_transactions";
 	protected $guarded = [];

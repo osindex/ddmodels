@@ -1,7 +1,9 @@
 <?php
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AccountTransaction extends Model {
+	use SoftDeletes;
 	protected $table = "account_transactions";
 	protected $guarded = [];
 	public function shop() {

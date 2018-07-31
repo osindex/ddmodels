@@ -3,9 +3,10 @@
 namespace Base\Models;
 
 use Base\Models\Express;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model {
-	// use SoftDeletes;
+	use SoftDeletes;
 
 	/*
 		     * Role profile to get value from ntrust config file.

@@ -1,7 +1,9 @@
 <?php
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Driver extends Model {
+	use SoftDeletes;
 	protected $table = "drivers";
 	protected $guarded = [];
 

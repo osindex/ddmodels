@@ -1,8 +1,10 @@
 <?php
 
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Area extends Model {
+	use SoftDeletes;
 	protected $table = "areas";
 
 	protected $guarded = [];

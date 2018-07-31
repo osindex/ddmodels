@@ -1,7 +1,9 @@
 <?php
 namespace Base\Models;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ExpressPayment extends Model {
+	use SoftDeletes;
 	protected $table = "express_payments";
 	protected $guarded = [];
 	public function express() {
