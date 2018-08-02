@@ -68,7 +68,7 @@ class Express extends Model {
 		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver', 'fromArea', 'toArea');
 	}
 	public function expressRoutesWithAll() {
-		return $this->hasMany('Base\Models\ExpressRoute')->with('toDriver', 'fromDriver', 'fromStation', 'toStation');
+		return $this->hasMany('Base\Models\ExpressRoute')->selectRAW('*,(case when op_type = 11 then "取送" when op_type = 12 then "取转" when op_type = 22 then "中转" when op_type = 21 then "派送" end) as op_string')->with('toDriver', 'fromDriver', 'fromStation', 'toStation', 'fromArea', 'toArea');
 	}
 	public function fromArea() {
 		return $this->belongsTo('Base\Models\Area', 'est_send_area', 'code');

@@ -26,10 +26,10 @@ class ExpressRoute extends Model {
 		return $this->hasOne('Base\Models\Station', 'id', 'to_station_id')->select('id', 'name', 'lng', 'lat', 'area_code', 'city_code');
 	}
 	public function fromArea() {
-		return $this->belongsTo('Base\Models\Area', 'from_area_code', 'code');
+		return $this->belongsTo('Base\Models\Area', 'from_area_code', 'code')->select('id', 'code', 'name');
 	}
 	public function toArea() {
-		return $this->belongsTo('Base\Models\Area', 'to_area_code', 'code');
+		return $this->belongsTo('Base\Models\Area', 'to_area_code', 'code')->select('id', 'code', 'name');
 	}
 	public function express() {
 		return $this->belongsTo('Base\Models\Express');
