@@ -21,4 +21,7 @@ class StatDriver extends Model {
 	//   `deleted_at` timestamp NULL DEFAULT NULL,
 	//   PRIMARY KEY (`id`)
 	// ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+	public function driver() {
+		return $this->BelongsTo('Base\Models\Driver');
+	}
 }
