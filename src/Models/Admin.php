@@ -38,7 +38,11 @@ class Admin extends Model {
 	public function hasRole($role) {
 		$rolesArray = $this->roles()->pluck('name')->toArray();
 		// var_dump($rolesArray);
-		return in_array($role, $rolesArray);
+		if (is_string($role)) {
+			return in_array($role, $rolesArray);
+		} else {
+			return array_intersect($role, $rolesArray);
+		}
 	}
 	public function addressbooks() {
 		return $this->hasMany('Base\Models\AddressBook');
