@@ -15,7 +15,7 @@ class ExpressDdid extends Model {
 		if ($time < 4) {
 			// 3次机会
 			mt_srand();
-			$ddids = ExpressDdid::where('is_pre', 0)->where('is_active', 0)->where('id', '>', mt_rand(100000, 800000))->limit($count)->pluck('ddid')->toArray();
+			$ddids = ExpressDdid::where('is_pre', 0)->where('is_active', 0)->where('ddid', '>', mt_rand(100000, 800000))->limit($count)->pluck('ddid')->toArray();
 			$ready = count($ddids);
 			if ($ready == $count) {
 				return $ddids;
