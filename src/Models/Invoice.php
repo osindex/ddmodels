@@ -6,6 +6,9 @@ class Invoice extends Model {
 	protected $table = "invoices";
 	protected $guarded = [];
 
+	protected $casts = [
+		'file' => 'array',
+	];
 	public function user() {
 		return $this->belongsTo('Base\Models\User');
 	}
