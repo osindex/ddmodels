@@ -10,7 +10,9 @@ class ExpressRoute extends Model {
 	protected $guarded = [];
 
 	protected $dates = ['start_at', 'end_at'];
-
+	protected $casts = [
+		'courier_info' => 'array',
+	];
 	public function toDriver() {
 		return $this->hasOne('Base\Models\Driver', 'id', 'to_driver_id')->select('id', 'name', 'mobile', 'is_active', 'is_online', 'push_id', 'last_lng', 'last_lat', 'last_position', 'last_refresh_at');
 	}
