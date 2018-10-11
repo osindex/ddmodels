@@ -101,4 +101,11 @@ class Express extends Model {
 		return $this->hasMany('Base\Models\ExpressInsurance');
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 * 添加一对一的订单优惠券关系
+	 */
+	public function coupon() {
+		return $this->belongsTo('Base\Models\Coupon', 'coupon_id', 'id');
+	}
 }
