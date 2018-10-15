@@ -97,14 +97,12 @@ class Express extends Model {
 	public function add_pickup() {
 		return $this->hasOne('Base\Models\ExpressAddPickup');
 	}
+	public function insuresOne() {
+		return $this->hasOne('Base\Models\ExpressInsurance', 'express_id', 'id')->select(['id', 'express_id', 'is_insure', 'declared_value', 'pay_amount']);
+	}
 	public function insures() {
 		return $this->hasMany('Base\Models\ExpressInsurance');
 	}
-
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-	 * 添加一对一的订单优惠券关系
-	 */
 	public function coupon() {
 		return $this->belongsTo('Base\Models\Coupon', 'coupon_id', 'id');
 	}
